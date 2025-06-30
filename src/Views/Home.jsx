@@ -1,34 +1,27 @@
 import Layout from "../Components/Layout/Layout"
 import { useNavigate } from "react-router-dom";
+import { useEffect,useState } from "react";
 
 function Home() {
 
-
-  const productos = [
-    {
-      Titulo:"Producto1",
-      Precio:1000,
-      Descripcion:"Producto1"
-    },
-    {
-      Titulo:"Producto2",
-      Precio:1000,
-      Descripcion:"Producto2"
-    },
-    {
-      Titulo:"Producto3",
-      Precio:1000,
-      Descripcion:"Producto3"
-    },
-    {
-      Titulo:"Producto4",
-      Precio:1000,
-      Descripcion:"Producto4"
-    },
-    
-  ]
-
   const navigate = useNavigate();
+  const [productos,setProductos] = useState([])
+  const [error,setError] = useState(null)
+
+  async function fetchData(){
+    try{
+      const respuesta = await fetch("https://fakestoreapi.com/products")
+      const data = await respuesta.json()
+      setProductos(data)
+    } catch (error){
+      setError("No pude traer los productos")
+    }
+  }
+
+  useEffect(()=>
+  {
+    fetchData()
+  },[])
 
   function irADetalles(producto){
     navigate("/Producto",{state: producto})
@@ -36,13 +29,15 @@ function Home() {
   return (
     <Layout>
       {
+        error && <p>{error}</p>
+      }
+      {
         productos.map((producto)=>{
           return(
             <div className="Contenedor-Producto">
-              <h1>{producto.Titulo}</h1>
-              <p>{producto.Precio}</p>
-              <p>{producto.Descripcion}</p>
-              <button onClick={()=>irADetalles(producto)}>Comprar</button>
+              <h1>{producto.title}</h1>
+              <img src={producto.image} alt={producto.title}></img>
+              <button onClick={()=>irADetalles(producto)}>Detalles</button>
             </div>
           )
         })
