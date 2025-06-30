@@ -1,6 +1,8 @@
 import Layout from "../Components/Layout/Layout"
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+
 
   const productos = [
     {
@@ -25,6 +27,12 @@ function Home() {
     },
     
   ]
+
+  const navigate = useNavigate();
+
+  function irADetalles(producto){
+    navigate("/Producto",{state: producto})
+  }
   return (
     <Layout>
       {
@@ -34,7 +42,7 @@ function Home() {
               <h1>{producto.Titulo}</h1>
               <p>{producto.Precio}</p>
               <p>{producto.Descripcion}</p>
-              <button>Comprar</button>
+              <button onClick={()=>irADetalles(producto)}>Comprar</button>
             </div>
           )
         })
