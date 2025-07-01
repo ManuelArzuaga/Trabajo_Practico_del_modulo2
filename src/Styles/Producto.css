@@ -1,0 +1,38 @@
+.Contenedor{
+  border: 1px solid black;
+  height: 20%;
+  max-width: 20%;
+  padding: 20px;
+  margin: 40px auto;
+  text-align: center;
+  background-color: #fdfdfd;
+  border-radius: 20px;
+}
+
+.Contenedor img{
+  width: 100%;
+  max-height: 300px;
+  margin-bottom: 20px;
+}
+
+.Contenedor h1{
+  margin-bottom: 20px;
+}
+
+.Contenedor p{
+  margin: 10px;
+}
+
+.Contenedor button{
+  margin-top: 20px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.Contenedor button:hover{
+  background-color: #0056b3;
+}
