@@ -1,0 +1,18 @@
+header{
+  background-color: yellow;
+  padding: 20px;
+}
+
+header nav ul{
+  display: flex;
+  justify-content: end;
+  gap:20px;
+}
+
+header nav ul li{
+  list-style: none;
+}
+
+header nav ul li a{
+  text-decoration: none;
+}

@@ -1,6 +1,7 @@
 import Layout from "../Components/Layout/Layout"
 import { useNavigate } from "react-router-dom";
 import { useEffect,useState } from "react";
+import "../Styles/Home.css"
 
 function Home() {
 
@@ -28,6 +29,7 @@ function Home() {
   }
   return (
     <Layout>
+      <section className="ListaProductos">
       {
         error && <p>{error}</p>
       }
@@ -42,6 +44,8 @@ function Home() {
           )
         })
       }
+      </section>
+      
     </Layout>
   )
 }

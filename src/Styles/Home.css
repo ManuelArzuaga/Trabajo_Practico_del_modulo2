@@ -1,0 +1,39 @@
+.ListaProductos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.Contenedor-Producto {
+  border-radius: 2%;
+  border: 1px solid black;
+  padding: 15px;
+  text-align: center;
+}
+
+.Contenedor-Producto img{
+  height: auto;
+  width: 100%;
+  max-height: 150px;
+}
+
+.Contenedor-Producto h1{
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.Contenedor-Producto button{
+  margin-top: 20px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.Contenedor-Producto button:hover{
+  background-color: #0056b3;
+}
